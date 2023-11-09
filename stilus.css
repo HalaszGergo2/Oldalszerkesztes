@@ -1,0 +1,144 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    width: 90%;
+    max-width: 900px;
+    margin: auto;
+    background-image: url(kepek/hatter.jpg);
+    
+    color: white;
+}
+header h1{
+    color: plum;
+}
+img{
+    width:100%;
+}
+main{
+    display: grid;
+    grid-template-columns: 200px 5fr 2.5fr;
+    grid-template-areas: 
+    "h h h"
+    "n n n"
+    "b a j"
+    "f f f";
+}
+article{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: 
+    "e m k";
+    gap: 10px;
+}
+.helyezes{
+    border: 1px solid white;
+    padding: 3px;
+}
+#elso{
+    grid-area: e;
+}
+#masodik{
+    grid-area: m;
+}
+#harmadik{
+    grid-area: k;
+}
+header{
+    grid-area: h;
+}
+article{
+    grid-area: a;
+}
+nav{
+    grid-area: n;
+}
+footer{
+    grid-area: f;
+}
+aside#bal{
+    grid-area: b;
+}
+aside#jobb{
+    grid-area: j;
+}
+header, nav, article, footer, aside {
+    border: 1px solid white;
+    padding: 10px;
+}
+
+nav ul{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    list-style-type: none;
+    text-align: center;
+}
+nav li {
+    background-color: azure;
+    padding: 5px;
+    color: black;
+}
+nav a{
+    text-decoration: none;
+}
+footer{
+    text-align: center;
+}
+
+/*TABLETNÉZET*/
+@media only screen and (max-width: 750px) {
+    main{
+        font-size: 12px;
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+        "h"
+        "n"
+        "b"
+        "j"
+        "a"
+        "f";
+    }
+    nav ul{
+        grid-template-columns: 1fr;
+        gap: 5px;
+    }
+    article{
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: 
+        "e m"
+        "k k";
+        gap: 10px;
+    }
+
+  }
+
+/*MOBILNÉZET*/
+@media only screen and (max-width: 450px) {
+    main{
+        font-size: 12px;
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+        "h"
+        "n"
+        "a"
+        "b"
+        "j"
+        "f";
+    }
+    nav ul{
+        grid-template-columns: 1fr;
+        gap: 5px;
+    }
+    article{
+       
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+        "e"
+        "m"
+        "k";
+        gap: 10px;
+    }
+
+  }
